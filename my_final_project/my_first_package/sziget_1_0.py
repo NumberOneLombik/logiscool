@@ -1,8 +1,8 @@
 import random # random számok generálásához
 import sys
 import time
-#from art import text2art
-#import ascii_magic
+from art import text2art
+import ascii_magic
 from .esély import esély_számítás as esély
 
 szigetentöltött_napok = 1
@@ -75,6 +75,12 @@ def main_menu(restart:int):
 
         if enivaló_napban_kifejezve < 1:
             return end_of_the_game("éhhalál")
+        
+        if deszkák_a_tutajhoz == 10:
+            return end_of_the_game("tutaj")
+        
+        if szigetentöltött_napok > 30:
+            return end_of_the_game("30nap")
 
         if p > 7:
             return end_of_the_game("végkimerülés")
@@ -282,6 +288,28 @@ def end_of_the_game(ok):
             print(ascii_text)
 
             print("""Capa!""")
+        elif ok == "tutaj":
+            print("Gratulálok, elkészült a tutajod!")
+            time.sleep(2)
+            print("Sikerült elmenekülnöd a szigetről. Megnyerted a játékot!")
+            time.sleep(2)
+            print("Szigeten töltött napjaid száma: ", szigetentöltött_napok)
+        elif ok == "30nap":
+            okesély = esély(50)
+            if okesély == 1:
+                return main_menu(0)
+            elif okesély == 2:
+                return end_of_the_game("vihar")
+        elif ok == "vihar":
+            print("A szigeten vihar van, a víz szintje megemelkedik.")
+            time.sleep(2)
+            print("A víz szintje elérte a bázisodat, és elsodorta azt.")
+            time.sleep(2)
+            print("Így nincs több élelmed, tiszta vized és deszkád sem.")
+            time.sleep(2)
+            print("A víz elöntötte a szigetet, és te is elmerültél.")
+            time.sleep(2)
+            print("Szigeten töltött napjaid száma: ", szigetentöltött_napok)
         újra = input("Ha szeretnél egy új játszmát, ird be: I, ha nem: N\n: ")
         if újra == "I":
             return előszó(1)

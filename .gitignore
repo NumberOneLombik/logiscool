@@ -1,0 +1,4 @@
+.venv/
+my_final_project/my_first_package/__pycache__/
+my_final_project/my_first_package/build/
+my_final_project/my_first_package/my_first_package.egg-info/
