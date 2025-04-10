@@ -1,23 +1,21 @@
 @echo off
-setlocal EnableDelayedExpansion
+bathelye=%~dp0
 
 echo Venv letrehozasa...
 python -m venv venv
 
 echo Venv aktivalasa...
-call venv\Scripts\activate.bat
+call %bathelye%venv\Scripts\activate.bat
 
 echo pip frissitese...
 python -m pip install --upgrade pip
 
 echo Kovetelmenyek telepitese...
-pip install -r my_final_project\my_first_package\requirements.txt
+pip install -r %bathelye%my_final_project\requirements.txt
 
 echo Projekt inditasa...
 
 echo ---
 echo Kesz! A kornyezet aktiv és a projekt fut.
 pause
-
 cls
-python my_final_project\indito.py

@@ -1,8 +1,8 @@
 import random # random számok generálásához
 import sys
 import time
-from art import text2art
-import ascii_magic
+# from art import text2art
+# import ascii_magic
 from .esély import esély_számítás as esély
 
 szigetentöltött_napok = 1
