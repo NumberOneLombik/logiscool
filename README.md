@@ -6,7 +6,7 @@ A játékosnak túl kell élnie és el kell menekülnie egy lakatlan szigetről.
 4. Deszkát gyűjt
 5. Pihen
 
-#Telepítés:
+Telepítés:
 - Legyen Python a gépeden (https://www.python.org/downloads/)
 - Töltsd le a zipet
 - Csomagold ki
