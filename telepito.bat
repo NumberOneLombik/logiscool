@@ -1,6 +1,5 @@
 @echo off
 setlocal EnableDelayedExpansion
-chcp 65001 > nul
 
 echo Venv letrehozasa...
 python -m venv venv
