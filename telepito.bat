@@ -1,5 +1,5 @@
 @echo off
-bathelye=%~dp0
+set bathelye=%~dp0
 
 echo Venv letrehozasa...
 python -m venv venv
