@@ -2,6 +2,8 @@
 
 set myPath=%CD% 
 ::%~dp0
+echo CD: %myPath%
+echo -------------------------------
 
 echo [1/3] Venv létrehozása...
 python -m venv venv
