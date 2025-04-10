@@ -9,5 +9,5 @@ echo ---
 echo Kész! A környezet aktív és a projekt fut.
 pause
 cls
-python %bathelye%my_final_project\sziget_1_0.py
+python %bathelye%my_final_project\indito.py
 pause
