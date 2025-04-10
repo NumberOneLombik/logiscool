@@ -17,6 +17,6 @@ pip install -e %bathelye%my_final_project\my_first_package
 echo Projekt inditasa...
 
 echo ---
-echo Kesz! A kornyezet aktiv és a projekt fut.
+echo Kesz! A kornyezet aktiv es a projekt fut, mihelyt elinditod/ja az indito(csaktelepitesutan).bat-ot.
 pause
 cls
