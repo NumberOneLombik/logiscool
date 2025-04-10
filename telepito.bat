@@ -12,6 +12,7 @@ python -m pip install --upgrade pip
 
 echo Kovetelmenyek telepitese...
 pip install -r %bathelye%my_final_project\requirements.txt
+pip install -e %bathelye%my_final_project\my_first_package
 
 echo Projekt inditasa...
 
