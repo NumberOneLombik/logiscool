@@ -89,6 +89,7 @@ def main_menu(restart:int):
 
         print(f"{szigetentöltött_napok} napja vagy a szigeten, {időjárás[választott_időjárás]}. van {víz_literben} liter vízed és {enivaló_napban_kifejezve} napnyi enivalód. \n{pihentség[p]}. Van {deszkák_a_tutajhoz} deszkád a tutajhoz. Mit szeretnél csinálni?")
         print("1. Vizet gyűjtesz \n2. Enivalót keresel \n3. Üzenetet küldesz \n4. Deszkát gyűjtesz \n5. Pihensz")
+        p += 1
         szigetentöltött_napok += 1
         választott_időjárás += 1
         víz_literben -= 3
@@ -191,7 +192,7 @@ def üzenet_küldés():
 
 def deszka_gyűjtés():
     global deszkák_a_tutajhoz
-    r_cápa = random.randint(1, 10)
+    r_cápa = random.randint(1, 12)
     bemegyek = input(f"VAN {deszkák_a_tutajhoz} DESZKAD. A TENGERBEN {r_cápa} CAPA VAN. BEMESZ A DESZKAERT? (i/n)")
     if r_cápa < 8:
         e = esély(85)
