@@ -6,7 +6,7 @@ import ascii_magic
 from .esély import esély_számítás as esély
 
 szigetentöltött_napok = 1
-időjárás = ["meleg, párás idő van","szakad az eső","szakad az eső","","","",""]
+időjárás = ["meleg, párás idő van", "szakad az eső" ,"melegszáraz idő van", "felhős az ég", "szemerkél az eső", "süt a nap és fúj a szél"]
 választott_időjárás = 0
 víz_literben = 15
 enivaló_napban_kifejezve = 3
@@ -36,7 +36,7 @@ def előszó(X:int):
             előszó(0)
     else:
         szigetentöltött_napok = 1
-        időjárás = ["meleg, párás idő van","szakad az eső","","","","",""]
+        időjárás = ["meleg, párás idő van", "szakad az eső" ,"melegszáraz idő van", "felhős az ég", "szemerkél az eső", "süt a nap és fúj a szél"]
         választott_időjárás = 0
         víz_literben = 15
         enivaló_napban_kifejezve = 3
@@ -84,6 +84,8 @@ def main_menu(restart:int):
 
         if p > 7:
             return end_of_the_game("végkimerülés")
+        
+        választott_időjárás = random.randint(0, 5)
 
         print(f"{szigetentöltött_napok} napja vagy a szigeten, {időjárás[választott_időjárás]}. van {víz_literben} liter vízed és {enivaló_napban_kifejezve} napnyi enivalód. \n{pihentség[p]}. Van {deszkák_a_tutajhoz} deszkád a tutajhoz. Mit szeretnél csinálni?")
         print("1. Vizet gyűjtesz \n2. Enivalót keresel \n3. Üzenetet küldesz \n4. Deszkát gyűjtesz \n5. Pihensz")
