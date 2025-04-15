@@ -198,9 +198,9 @@ def deszka_gyűjtés():
     r_cápa = random.randint(1, 12)
     bemegyek = input(f"VAN {deszkák_a_tutajhoz} DESZKAD. A TENGERBEN {r_cápa} CAPA VAN. BEMESZ A DESZKAERT? (i/n)")
     if r_cápa < 8:
-        e = esély(85)
+        e = esély2(85)
     if r_cápa > 7:
-        e = esély(35, 50)
+        e = esély3(35, 50)
     if bemegyek == "i":
         if e == 1:
             print("Szerencséd van, megszerezted!")
@@ -232,7 +232,7 @@ def pihenés():
         if előzők == 3: 
             print("Nem tudsz többet álmodni, ez volt az utolsó álmod.")
             return main_menu(0)
-        esély2 = esély(33, 66)
+        esély2 = esély3(33, 66)
         if esély2 == 1:
             print("Valami egészen bizard álmot láttál.")
         elif esély2 == 2:
@@ -301,7 +301,7 @@ def end_of_the_game(ok):
             time.sleep(2)
             print("Szigeten töltött napjaid száma: ", szigetentöltött_napok)
         elif ok == "30nap":
-            okesély = esély(50)
+            okesély = esély2(50)
             if okesély == 1:
                 return main_menu(0)
             elif okesély == 2:

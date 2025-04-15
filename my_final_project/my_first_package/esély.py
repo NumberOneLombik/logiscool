@@ -1,5 +1,5 @@
 import random
-def esély(a, b, c, d, e):
+def esély6(a, b, c, d, e):
     esély1 = random.randint(1, 100)
     if esély1 < a:
         return 1
@@ -14,7 +14,7 @@ def esély(a, b, c, d, e):
     else:
         return 6
 
-def esély(a, b, c, d):
+def esély5(a, b, c, d):
     esély1 = random.randint(1, 100)
     if esély1 < a:
         return 1
@@ -27,7 +27,7 @@ def esély(a, b, c, d):
     else:
         return 5
 
-def esély(a, b, c):
+def esély4(a, b, c):
     esély1 = random.randint(1, 100)
     if esély1 <= a:
         return 1
@@ -38,7 +38,7 @@ def esély(a, b, c):
     else:
         return 4
     
-def esély(a, b):
+def esély3(a, b):
     esély1 = random.randint(1, 100)
     if esély1 <= a:
         return 1
@@ -47,7 +47,7 @@ def esély(a, b):
     else:
         return 3
 
-def esély(a):
+def esély2(a):
     esély1 = random.randint(1, 100)
     if esély1 <= a:
         return 1
