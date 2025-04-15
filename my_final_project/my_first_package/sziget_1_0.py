@@ -256,13 +256,12 @@ def pihenés():
             print("Nagyon kipihented magad.")
             p = 0
     elif i1 == "A" or i1 == "a":
-        álom(álmodások)
+        return álom(álmodások)
     else:
         print("Nincs ilyen választás!")
         time.sleep(2)
-        print("Megpróbálkozol egy újabb alvással?")
+        print("Megpróbálkozol egy újabb alvással.")
         time.sleep(2)
-        álmodások -= 1
         álom(álmodások)
     return main_menu(0)
 
