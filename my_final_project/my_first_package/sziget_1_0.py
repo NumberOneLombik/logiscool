@@ -13,7 +13,7 @@ enivaló_napban_kifejezve = 3
 pihentség = ["Nagyon kipihent vagy", "Nagyon kipihent vagy", "Kipihent vagy", "Pihent vagy", "Fáradt vagy", "Nagyon fáradt vagy", "Halálosan kimerült vagy"]
 p = 0
 álmodások = 0
-esély2 = 0
+esélyv2 = 0
 e = 0
 deszkák_a_tutajhoz = 0
 üzenet = 0
@@ -227,32 +227,32 @@ def pihenés():
     global pihentség, p
     print("Jól megérdemelt pihenésedet töltöd, ez alatt álmokat láthatsz, összesen háromszor álmodhatsz.\n")
     def álom(előzők:int):
-        global álmodások, esély2
+        global álmodások, esélyv2
         álmodások += 1
         if előzők == 3: 
             print("Nem tudsz többet álmodni, ez volt az utolsó álmod.")
             return main_menu(0)
-        esély2 = esély3(33, 66)
-        if esély2 == 1:
+        esélyv2 = esély3(33, 66)
+        if esélyv2 == 1:
             print("Valami egészen bizard álmot láttál.")
-        elif esély2 == 2:
+        elif esélyv2 == 2:
             print("Egy szörnyű álmot láttál.")
-        elif esély2 == 3:
+        elif esélyv2 == 3:
             print("Valami egészen gyönyörű volt az álmod.")
     
-    esély2 = 0
+    esélyv2 = 0
     álmodások = 0
     álom(álmodások)
     
     i1 = input("Szeretnél fel|É|bredni, vagy |A|ludnál még?: ")
     if i1 == "É" or i1 == "é":
-        if esély2 == 1:
+        if esélyv2 == 1:
             print("Viszonylag pihenten ébredsz.")
             p -= random.randint(2, 4)
-        elif esély2 == 2:
+        elif esélyv2 == 2:
             print("Az alvás nem sokat segített.")
             p -= random.randint(1, 2)
-        elif esély2 == 3:
+        elif esélyv2 == 3:
             print("Nagyon kipihented magad.")
             p = 0
     elif i1 == "A" or i1 == "a":
