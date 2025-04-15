@@ -3,7 +3,7 @@ import sys
 import time
 from art import text2art
 import ascii_magic
-from .esély import esély_számítás as esély
+from .esély import * 
 
 szigetentöltött_napok = 1
 időjárás = ["meleg, párás idő van", "szakad az eső" ,"melegszáraz idő van", "felhős az ég", "szemerkél az eső", "süt a nap és fúj a szél"]
