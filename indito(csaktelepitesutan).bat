@@ -10,3 +10,4 @@ echo Kész! A környezet aktív és a projekt fut.
 
 cls
 python %bathelye%my_final_project\indito.py
+pause

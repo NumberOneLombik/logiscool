@@ -12,6 +12,9 @@ víz_literben = 15
 enivaló_napban_kifejezve = 3
 pihentség = ["Nagyon kipihent vagy", "Nagyon kipihent vagy", "Kipihent vagy", "Pihent vagy", "Fáradt vagy", "Nagyon fáradt vagy", "Halálosan kimerült vagy"]
 p = 0
+álmodások = 0
+esély2 = 0
+e = 0
 deszkák_a_tutajhoz = 0
 üzenet = 0
 segítség = False
@@ -191,7 +194,7 @@ def üzenet_küldés():
 
 
 def deszka_gyűjtés():
-    global deszkák_a_tutajhoz
+    global deszkák_a_tutajhoz, e
     r_cápa = random.randint(1, 12)
     bemegyek = input(f"VAN {deszkák_a_tutajhoz} DESZKAD. A TENGERBEN {r_cápa} CAPA VAN. BEMESZ A DESZKAERT? (i/n)")
     if r_cápa < 8:
