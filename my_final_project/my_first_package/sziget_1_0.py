@@ -292,12 +292,10 @@ def end_of_the_game(ok):
             print("Nincs szerencséd!")
             time.sleep(2)
             print("Már nincs mit enned, ha csak nem ezt a csontot!")
-            ascii_art = ascii_magic.from_image("./koponya.png", cols=100)
-            print(ascii_art)
         elif ok == "végkimerülés":
-            pass
+            print(f"Belehaltál a fáradságba. szigeten töltött napjaid száma: {szigetentöltött_napok}")
         elif ok == "cápa":
-            ascii_text = text2art("CAPA", )  # Próbáld ki más betűtípusokkal is!
+            ascii_text = text2art("CAPA", ) 
             print(ascii_text)
 
             print("""Capa!""")
