@@ -19,6 +19,8 @@ deszkák_a_tutajhoz = 0
 üzenet = 0
 segítség = False
 kalózok = False
+segédazálmodáshoz = 0
+indulopihentség = p
 
 def Sziget():
     előszó(0)
@@ -53,7 +55,7 @@ def előszó(X:int):
         
 
 def main_menu(restart:int):
-    global szigetentöltött_napok, választott_időjárás, víz_literben, enivaló_napban_kifejezve, p, deszkák_a_tutajhoz, üzenet, segítség, kalózok
+    global szigetentöltött_napok, választott_időjárás, víz_literben, enivaló_napban_kifejezve, p, deszkák_a_tutajhoz, üzenet, segítség, kalózok, segédazálmodáshoz, álmodások, esélyv2, pihentség, e, indulopihentség
     if restart == 0:
         def u_ellenorzes(számuk):
             global segítség, kalózok
@@ -100,7 +102,8 @@ def main_menu(restart:int):
     if restart == 1:
         print("Nincs ilyen választás! Válassz 1 és 5 között.")
     válasz = input()
-
+    segédazálmodáshoz = 0
+    álmodások = 0
     print("")
 
     if válasz == "1":
@@ -223,46 +226,51 @@ def deszka_gyűjtés():
     return main_menu(0)
 
 
-def pihenés():
-    global pihentség, p
-    print("Jól megérdemelt pihenésedet töltöd, ez alatt álmokat láthatsz, összesen háromszor álmodhatsz.\n")
-    def álom(előzők:int):
-        global álmodások, esélyv2
-        álmodások += 1
-        if előzők == 3: 
-            print("Nem tudsz többet álmodni, ez volt az utolsó álmod.")
-            return main_menu(0)
-        esélyv2 = esély3(33, 66)
+def álom(randomé):
+    global álmodások, esélyv2, segédazálmodáshoz
+    álmodások += 1
+    if not (álmodások > 3) and segédazálmodáshoz == 0: 
+        esélyv2 = randomé
         if esélyv2 == 1:
-            print("Valami egészen bizard álmot láttál.")
+            print("Valami egészen gyönyörű volt az álmod.")
         elif esélyv2 == 2:
             print("Egy szörnyű álmot láttál.")
         elif esélyv2 == 3:
-            print("Valami egészen gyönyörű volt az álmod.")
-    
-    esélyv2 = 0
-    álmodások = 0
-    álom(álmodások)
-    
-    i1 = input("Szeretnél fel|É|bredni, vagy |A|ludnál még?: ")
-    if i1 == "É" or i1 == "é":
-        if esélyv2 == 1:
-            print("Viszonylag pihenten ébredsz.")
-            p -= random.randint(2, 4)
-        elif esélyv2 == 2:
-            print("Az alvás nem sokat segített.")
-            p -= random.randint(1, 2)
-        elif esélyv2 == 3:
-            print("Nagyon kipihented magad.")
-            p = 0
-    elif i1 == "A" or i1 == "a":
-        return álom(álmodások)
+            print("Valami egészen bizard álmot láttál.")
     else:
-        print("Nincs ilyen választás!")
-        time.sleep(2)
-        print("Megpróbálkozol egy újabb alvással.")
-        time.sleep(2)
-        álom(álmodások)
+        print("Nem tudsz többet álmodni, ez volt az utolsó álmod.")
+        segédazálmodáshoz = 1
+def pihenés():
+    global pihentség, p, indulopihentség, esélyv2, álmodások, segédazálmodáshoz
+    print("Jól megérdemelt pihenésedet töltöd, ez alatt álmokat láthatsz, összesen háromszor álmodhatsz.\n")
+    
+    álmodások = 0
+    indulopihentség = p
+    esélyv2 = random.randint(1, 3)
+    álom(random.randint(1, 3))
+    while álmodások < 3:
+        if p <= indulopihentség:
+            p = 0
+        i1 = input("Szeretnél fel|É|bredni, vagy |A|ludnál még?: ")
+        if i1 == "É" or i1 == "é":
+            if esélyv2 == 1:
+                print("Viszonylag pihenten ébredsz.")
+                p -= random.randint(2, 4)
+            elif esélyv2 == 2:
+                print("Az alvás nem sokat segített.")
+                p -= random.randint(1, 2)
+            elif esélyv2 == 3:
+                print("Nagyon kipihented magad.")
+                p = 0
+            álmodások = 3
+        elif i1 == "A" or i1 == "a":
+            álom(random.randint(1, 3))
+        else:
+            print("Nincs ilyen választás!")
+            time.sleep(2)
+            print("Megpróbálkozol egy újabb alvással.")
+            time.sleep(2)
+            álom(random.randint(1, 3))
     return main_menu(0)
 
 
